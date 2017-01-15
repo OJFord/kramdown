@@ -19,14 +19,14 @@ function preprocessor {
     strong_emph | emph
 }
 
-function pandoc_fromspec {
+function pandoc_from_kramdown {
     local extensions=(
         backtick_code_blocks
         fenced_code_attributes
         tex_math_dollars
         yaml_metadata_block
     )
-    pandoc --from="markdown_strict+$(join + "${extensions[@]}")"
+    pandoc --from="markdown_strict+$(join + "${extensions[@]}")" "$@"
 }
 
-preprocessor | pandoc_fromspec
+preprocessor | pandoc_from_kramdown "$@"
