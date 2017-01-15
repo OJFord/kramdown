@@ -15,3 +15,16 @@ Then I add Pandoc's:
 - `fenced_code_attributes` for adding language-specific syntax highlighting, or line numbers, etc.
 - `tex_math_dollars` for Latex/amsmath `display` sections
 - `yaml_metadata_block` for metadata
+
+## Usage
+
+Pipe to `kramdown`; continue as if you've just set `pandoc --from=whatever`:
+```sh
+cat notes.md | kramdown --to=pdf --output=rendered-notes.pdf
+```
+
+## Installation
+
+Download the binary from the [latest release](https://github.com/OJFord/kramdown/releases/latest), and stick it somewhere on your `$PATH` (e.g. `/usr/local/bin/kramdown`).
+
+macOS users should instead just run `brew install OJFord/formulae/kramdown`.
